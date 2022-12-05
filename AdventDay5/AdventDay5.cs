@@ -42,7 +42,7 @@
                 }
             }
 
-            Console.Write("Day 4 part 2: ");
+            Console.Write("Day 5 part 1: ");
             for (int i = 0; i < currentStack.Length; i++)
             {
                 Console.Write(currentStack[i].Pop());
@@ -96,7 +96,7 @@
                 }
             }
 
-            Console.Write("Day 4 part 2: ");
+            Console.Write("Day 5 part 2: ");
             for (int i = 0; i < currentStack.Length; i++)
             {
                 Console.Write(currentStack[i].Pop());
