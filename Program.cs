@@ -1,4 +1,5 @@
-﻿class Program
+﻿using AdventOfCode2022;
+class Program
 {
     static void Main(string[] args)
     {
@@ -11,5 +12,7 @@
         AdventDay4.OverlappingPairs();
 
         //Day 5
+        AdventDay5.MoveCratesReverseOrder();
+        AdventDay5.moveCratesSameOrder();
     }
 }
