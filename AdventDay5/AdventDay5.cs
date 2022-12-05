@@ -102,8 +102,6 @@
                 Console.Write(currentStack[i].Pop());
             }
             Console.WriteLine();
-
-
         }
     }
 }

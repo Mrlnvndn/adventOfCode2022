@@ -22,7 +22,7 @@
                         fullyIncluded++;
                     }
                 }
-                else
+                else // splitPair[0] < splitPair[2]
                 {
                     if (splitPair[1] <= splitPair[3])
                     {
