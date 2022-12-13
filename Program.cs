@@ -26,4 +26,5 @@ class Program
         //Day 7
         AdventDay7.FindDir();
     }
+
 }

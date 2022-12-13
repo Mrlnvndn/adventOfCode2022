@@ -10,13 +10,16 @@ namespace AdventOfCode2022
     public class AdventDay7
     {
         public int total;
+        public Directory smallestPossibleDir;
         public static void FindDir()
         {
             string input = File.ReadAllText("AdventDay7\\input7.txt");
             string[] inputArray = input.Split("\r\n");
             AdventDay7 adventDay7 = new AdventDay7();
             Directory root = adventDay7.ParseTerminalInput(inputArray);
-            Console.WriteLine("Day 7 part 1: " + adventDay7.CalculateSize(root));
+            adventDay7.CalculateSize(root);
+            Console.WriteLine("Day 7 part 1: " + adventDay7.total);
+            Console.WriteLine("Day 7 part 2: " + adventDay7.smallestPossibleDir.size);
         }
         public Directory ParseTerminalInput(string[] inputArray)
         {
@@ -59,7 +62,7 @@ namespace AdventOfCode2022
             }
             return root;
         }
-        public int CalculateSize(Directory directory)
+        public void CalculateSize(Directory directory)
         {
             foreach ((int, string) file in directory.files)
             {
@@ -76,9 +79,23 @@ namespace AdventOfCode2022
                     {
                         total += dir.size;
                     }
+                    if (dir.size >= 5717263)
+                    {
+                        if (smallestPossibleDir != null)
+                        {
+                            if (dir.size < smallestPossibleDir.size)
+                            {
+                                smallestPossibleDir = dir;
+                            }
+                        }
+                        else
+                        {
+                            smallestPossibleDir = dir;
+                        }
+
+                    }
                 }
             }
-            return total;
         }
     }
 
@@ -92,7 +109,6 @@ namespace AdventOfCode2022
 
         public Directory(string name, Directory? parent)
         {
-
             this.name = name;
             this.parent = parent;
             this.children = new List<Directory>();
