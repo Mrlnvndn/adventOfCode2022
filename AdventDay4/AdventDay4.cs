@@ -45,7 +45,6 @@
                 {
                     overlapping++;
                 }
-
             }
             Console.WriteLine("Day 4 part 2: " + overlapping);
         }
